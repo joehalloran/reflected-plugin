@@ -74,6 +74,7 @@ class Reflected {
 		$this->load_dependencies();
 		$this->set_locale();
 		$this->define_admin_hooks();
+		$this->define_metabox_hooks();
 		$this->define_public_hooks();
 
 	}
@@ -114,6 +115,11 @@ class Reflected {
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-reflected-admin.php';
 
 		/**
+		 * The class responsible for defining all actions relating to metaboxes.
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-reflected-admin-metabox.php';
+
+		/**
 		 * The class responsible for defining all actions that occur in the public-facing
 		 * side of the site.
 		 */
@@ -136,7 +142,7 @@ class Reflected {
 
 		$plugin_i18n = new Reflected_i18n();
 
-		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_reflected_textdomain' );
+		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
 
 	}
 
@@ -155,7 +161,7 @@ class Reflected {
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
 
 		$this->loader->add_action( 'init', $plugin_admin, 'new_cpt_lesson' );
-		//$this->loader->add_action( 'init', $plugin_admin, 'new_taxonomy_type' );
+		$this->loader->add_action( 'init', $plugin_admin, 'new_taxonomy_lesson' );
 
 	}
 
@@ -172,8 +178,20 @@ class Reflected {
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
+		$this->loader->add_filter('pre_get_posts', $plugin_public, 'set_lesson_order');
 
 	}
+
+	/**
+	 * Register all of the hooks related to metaboxes
+	 *
+	 * @since 		1.0.0
+	 * @access 		private
+	 */
+	private function define_metabox_hooks() {
+		$plugin_metaboxes = new Reflected_Admin_Metaboxes( $this->get_plugin_name(), $this->get_version() );
+		$this->loader->add_action( 'add_meta_boxes', $plugin_metaboxes, 'add_metaboxes' );
+	} // define_metabox_hooks()
 
 	/**
 	 * Run the loader to execute all of the hooks with WordPress.

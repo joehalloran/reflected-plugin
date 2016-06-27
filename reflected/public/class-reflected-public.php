@@ -100,4 +100,21 @@ class Reflected_Public {
 
 	}
 
+	public function set_lesson_order($wp_query) {
+	    // Get the post type from the query
+	    $post_type = $wp_query->query['post_type'];
+
+	    if ( $post_type == 'lesson') {
+
+	      // 'orderby' value can be any column name
+	      $wp_query->set('orderby', 'menu_order');
+
+	      // 'order' value can be ASC or DESC
+	      $wp_query->set('order', 'ASC');
+
+	    }
+
+	  
+	}
+
 }

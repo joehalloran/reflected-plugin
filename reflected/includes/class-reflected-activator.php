@@ -20,7 +20,7 @@
  * @subpackage Plugin_Name/includes
  * @author     Your Name <email@example.com>
  */
-class Plugin_Name_Activator {
+class Reflected_Activator {
 
 	/**
 	 * Short Description. (use period)
@@ -31,6 +31,12 @@ class Plugin_Name_Activator {
 	 */
 	public static function activate() {
 
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-reflected-admin.php';
+
+		Reflected_Admin::new_cpt_lesson();
+		Reflected_Admin::new_taxonomy_lesson();
+
+		flush_rewrite_rules();
 	}
 
 }
