@@ -79,9 +79,18 @@ class Reflected_Admin_Metaboxes
 	 * @access 	public
 	 * @return 	void
 	 */
-	public function metabox( ) {
+	public function metabox($post ) {
 	    // Output last time the post was modified.
 	    echo 'Last Modified:' . $post->post_modified;
+	    $prfx_stored_meta = get_post_meta( $post->ID );
+	    ?>
+	    <p>
+		    <label for="meta-image" class="prfx-row-title"><?php _e( 'Example File Upload', 'prfx-textdomain' )?></label>
+		    <input type="text" name="meta-image" id="meta-image" value="<?php if ( isset ( $prfx_stored_meta['meta-image'] ) ) echo $prfx_stored_meta['meta-image'][0]; ?>" />
+		    <input type="button" id="meta-image-button" class="button" value="<?php _e( 'Choose or Upload an Image', 'prfx-textdomain' )?>" />
+		</p>
+
+		<?php
 	 
 	    // Output 'this'.
 	    //echo $metabox['args']['foo'];
