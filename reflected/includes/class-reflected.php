@@ -190,7 +190,10 @@ class Reflected {
 	 */
 	private function define_metabox_hooks() {
 		$plugin_metaboxes = new Reflected_Admin_Metaboxes( $this->get_plugin_name(), $this->get_version() );
+
 		$this->loader->add_action( 'add_meta_boxes', $plugin_metaboxes, 'add_metaboxes' );
+		$this->loader->add_action( 'save_post', $plugin_metaboxes, 'prfx_meta_save' );
+
 	} // define_metabox_hooks()
 
 	/**

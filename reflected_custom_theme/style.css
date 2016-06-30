@@ -1,0 +1,152 @@
+/*
+Theme Name: ReflectED custom theme
+Theme URI: 
+Author: Joe Halloran
+Author URI: 
+Description: ReflectED custom theme - A devdmbootstrap3 v1.80 child theme.
+Version: 1.80
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: one-column, two-columns, right-sidebar, fluid-layout, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, rtl-language-support, theme-options, translation-ready
+Text Domain: devdmbootstrap3
+Template: devdmbootstrap3
+*/
+
+@import "css/bootstrap.css";
+
+/* YOU SHOULD BE MAKING A CHILD THEME. Don't let me be a bad guy and erase all your hard work with a theme update. I just want to bring you new amazing features. I don't want to destroy your world. I've include a child theme to use. Need help? http://devdm.com/DevDmBootstrap3/child-themes/ */
+
+/****************** Special Blank CSS classes for child themes to use without disturbing core bootstrap rules ****************/
+
+body {
+	font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
+	color: #444;
+}
+
+.dmbs-container {
+
+}
+
+.dmbs-header {
+	margin-top: 40px;
+}
+
+.dmbs-header-img {
+
+}
+
+.dmbs-header-text {
+
+}
+
+/* ##### Menu settings ##### */
+
+.dmbs-top-menu {
+	text-transform: uppercase;
+	font-size: 12px;
+
+}
+
+.dmbs-top-menu .navbar-inverse {
+	background-color: #F3F3F3;
+    border: 1px solid #ededed;
+    border-bottom: 5px solid #16A1E7;
+}
+
+.dmbs-top-menu .navbar-inverse .navbar-toggle {
+    border-color: #bbb;
+}
+
+.dmbs-top-menu .navbar-inverse .navbar-toggle:hover, .dmbs-top-menu .navbar-inverse .navbar-toggle:focus {
+    background-color: #16a1e7;
+    border-color: #16a1e7
+}
+
+.dmbs-top-menu .navbar-inverse .navbar-toggle .icon-bar {
+    background-color: #bbb;
+}
+
+.dmbs-top-menu .navbar-inverse .navbar-toggle:hover .icon-bar, .dmbs-top-menu .navbar-inverse .navbar-toggle:focus .icon-bar {
+	background-color: #fff;
+}
+
+.dmbs-top-menu .navbar-inverse .navbar-nav > li > a {
+	background-color: #F3F3F3;
+	color: #6a6a6a;
+}
+
+
+.dmbs-top-menu .navbar-inverse .navbar-nav > .active > a, 
+.dmbs-top-menu .navbar-inverse .navbar-nav > li > a:hover,
+.dmbs-top-menu .navbar-inverse .navbar-nav > li > a:focus  {
+	color: #fff;
+    background-color: #16A1E7;
+}
+
+.dmbs-top-menu .navbar-nav > li > .dropdown-menu {
+	background: #EFEFEF;
+	padding: 0;
+}
+
+.dmbs-top-menu .navbar-nav > li > .dropdown-menu a {
+    font-size: 11px;
+    line-height: 2.181818182;
+    padding: 8px 10px;
+    border-bottom: 1px solid #F9F9F9;
+}
+
+.dmbs-top-menu .navbar-nav > li > .dropdown-menu a:hover {
+    background: #e9e9e9;
+    color: #444;
+}
+
+/* ##### Content Area ##### */
+.dmbs-content {
+	margin-top: 20px;
+
+}
+
+.btn-info, .comment-respond #submit, #searchform #searchsubmit {
+    color: #fff;
+    background-color: #16a1e7;
+    border-color: #16a1e7;
+}
+
+a {
+    color: #16a1e7;
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+	font-weight: normal;
+
+}
+
+.dmbs-main {
+	border-right: 1px solid #F1F1F1;
+}
+
+.dmbs-front-page .page-header, .dmbs-main .page-header {
+	margin-top: 0;
+	border: none;
+}
+
+.dmbs-left {
+
+}
+
+.dmbs-right {
+
+}
+
+.dmbs-footer-menu {
+
+}
+
+.dmbs-author-credits {
+
+}
+
+.dmbs-footer {
+
+}

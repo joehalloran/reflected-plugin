@@ -104,7 +104,9 @@ class Reflected_Public {
 	    // Get the post type from the query
 	    $post_type = $wp_query->query['post_type'];
 
-	    if ( $post_type == 'lesson') {
+	    $taxononmy_type = $wp_query->tax_query->queries[0]['taxonomy'];
+
+	    if ( $post_type == 'lesson' || $taxononmy_type == 'lesson_type') {
 
 	      // 'orderby' value can be any column name
 	      $wp_query->set('orderby', 'menu_order');

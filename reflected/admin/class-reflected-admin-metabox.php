@@ -61,7 +61,6 @@ class Reflected_Admin_Metaboxes
 	 */
 	public function add_metaboxes() {
 		// add_meta_box( $id, $title, $callback, $screen, $context, $priority, $callback_args );
-		echo "run";
 		add_meta_box(
 	        'resources',
 	        __( 'Lesson Resources', 'reflected' ),
@@ -79,27 +78,34 @@ class Reflected_Admin_Metaboxes
 	 * @access 	public
 	 * @return 	void
 	 */
-	public function metabox($post ) {
+	public function metabox( $post ) {
 	    // Output last time the post was modified.
-	    echo 'Last Modified:' . $post->post_modified;
 	    $prfx_stored_meta = get_post_meta( $post->ID );
 	    ?>
 	    <p>
-		    <label for="meta-image" class="prfx-row-title"><?php _e( 'Example File Upload', 'prfx-textdomain' )?></label>
-		    <input type="text" name="meta-image" id="meta-image" value="<?php if ( isset ( $prfx_stored_meta['meta-image'] ) ) echo $prfx_stored_meta['meta-image'][0]; ?>" />
+		    <label for="meta-lesson-plan" class="prfx-row-title"><?php _e( 'Example File Upload', 'reflected' )?></label>
+		    <input type="text" name="meta-lesson-plan" id="meta-lesson-plan" value="<?php if ( isset ( $prfx_stored_meta['meta-lesson-plan'] ) ) echo $prfx_stored_meta['meta-lesson-plan'][0]; ?>" />
 		    <input type="button" id="meta-image-button" class="button" value="<?php _e( 'Choose or Upload an Image', 'prfx-textdomain' )?>" />
-		</p>
-
-		<?php
-	 
-	    // Output 'this'.
-	    //echo $metabox['args']['foo'];
-	 
-	    // Output 'that'.
-	    //echo $metabox['args']['bar'];
-	 
-	    // Output value of custom field.
-	    //echo get_post_meta( $post->ID, 'wpdocs_custom_field', true );
+		</p> 
+	<?php
 	}
 
+	public function prfx_meta_save( $post_id ) {
+ 
+	    // Checks save status
+	    $is_autosave = wp_is_post_autosave( $post_id );
+	    $is_revision = wp_is_post_revision( $post_id );
+	    $is_valid_nonce = ( isset( $_POST[ 'prfx_nonce' ] ) && wp_verify_nonce( $_POST[ 'prfx_nonce' ], basename( __FILE__ ) ) ) ? 'true' : 'false';
+	 
+	    // Exits script depending on save status
+	    if ( $is_autosave || $is_revision || !$is_valid_nonce ) {
+	        return;
+	    }
+		 
+		// Checks for input and saves if needed
+		if( isset( $_POST[ 'meta-lesson-plan' ] ) ) {
+		    update_post_meta( $post_id, 'meta-lesson-plan', $_POST[ 'meta-lesson-plan' ] );
+		}
+	 
+	}
 }
