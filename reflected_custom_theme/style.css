@@ -4,7 +4,7 @@ Theme URI:
 Author: Joe Halloran
 Author URI: 
 Description: ReflectED custom theme - A devdmbootstrap3 v1.80 child theme.
-Version: 1.80
+Version: 1.8.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, fluid-layout, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, rtl-language-support, theme-options, translation-ready
@@ -21,6 +21,7 @@ Template: devdmbootstrap3
 body {
 	font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
 	color: #444;
+    font-size: 16px;
 }
 
 .dmbs-container {
@@ -122,6 +123,16 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 
 }
 
+.spacer-10 {
+    height: 10px;
+}
+.spacer-20 {
+    height: 20px;
+}
+.spacer-40 {
+    height: 40px;
+}
+
 .dmbs-main {
 	border-right: 1px solid #F1F1F1;
 }
@@ -129,6 +140,30 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 .dmbs-front-page .page-header, .dmbs-main .page-header {
 	margin-top: 0;
 	border: none;
+}
+
+.dmbs-front-page .panel-default {
+    border-color: #16a1e7;
+    text-align: center;
+}
+
+.dmbs-front-page .panel-default > .panel-heading {
+    color: #ffffff;
+    background-color: #16a1e7;
+    border-color: #16a1e7;
+}
+
+.dmbs-front-page .panel-default > .panel-heading > .panel-title {
+    font-size: 28px;
+}
+
+.dmbs-front-page .panel-default .panel-body {
+    padding-top: 40px;
+    padding-bottom: 40px
+}
+
+.dmbs-front-page .panel .glyphicon {
+    font-size: 50px;
 }
 
 .dmbs-left {
