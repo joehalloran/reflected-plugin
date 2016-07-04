@@ -82,11 +82,21 @@ class Reflected_Admin_Metaboxes
 	    // Output last time the post was modified.
 	    $prfx_stored_meta = get_post_meta( $post->ID );
 	    ?>
+	    <h3>Lesson Plan</h3>
 	    <p>
-		    <label for="meta-lesson-plan" class="prfx-row-title"><?php _e( 'Example File Upload', 'reflected' )?></label>
-		    <input type="text" name="meta-lesson-plan" id="meta-lesson-plan" value="<?php if ( isset ( $prfx_stored_meta['meta-lesson-plan'] ) ) echo $prfx_stored_meta['meta-lesson-plan'][0]; ?>" />
-		    <input type="button" id="meta-image-button" class="button" value="<?php _e( 'Choose or Upload an Image', 'prfx-textdomain' )?>" />
-		</p> 
+		    <label for="meta-lesson-plan" class="prfx-row-title"><?php _e( 'Lesson Plan Upload', 'reflected' )?></label>
+		    <input type="text" name="meta-lesson-plan" class="meta-resource-input" id="meta-lesson-plan" value="<?php if ( isset ( $prfx_stored_meta['meta-lesson-plan'] ) ) echo $prfx_stored_meta['meta-lesson-plan'][0]; ?>" />
+		    <input type="button" id="meta-image-button" class="meta-image-button button" value="<?php _e( 'Choose or Upload an Image', 'prfx-textdomain' )?>" />
+		</p>
+		<div id="additional-resources"> 
+			<h3>Additional Resources</h3>
+			<p>
+			    <label for="meta-lesson-resource1" class="prfx-row-title"><?php _e( 'Resource Upload', 'reflected' )?></label>
+			    <input type="text" name="meta-lesson-resource1" class="meta-resource-input" id="meta-lesson-resource1" value="<?php if ( isset ( $prfx_stored_meta['meta-lesson-resource'] ) ) echo $prfx_stored_meta['meta-lesson-resource'][1]; ?>" />
+			    <input type="button" id="meta-image-button2" class="meta-image-button button" value="<?php _e( 'Choose or Upload an Image', 'prfx-textdomain' )?>" />
+			</p> 
+			<input type="button" id="meta-image-more" class="button" value="<?php _e( 'More', 'prfx-textdomain' )?>" />
+		</div>
 	<?php
 	}
 
