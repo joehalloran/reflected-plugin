@@ -47,7 +47,9 @@ jQuery(document).ready(function($){
 
     var $inputPar = $('#additional-resources').children('p').last();
     $('#meta-image-more').click(function(e){
+
         $clone = $inputPar.clone();
+        $clone.children('.meta-resource-input').val('');
         $('#additional-resources').children('p:last').after( $clone  );
 
     });

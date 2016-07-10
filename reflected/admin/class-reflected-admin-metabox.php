@@ -90,16 +90,47 @@ class Reflected_Admin_Metaboxes
 		</p>
 		<div id="additional-resources"> 
 			<h3>Additional Resources</h3>
+			<?php
+			$reflected_stored_lesson_resources = get_post_meta( $post->ID, 'meta-lesson-resource');
+		    if ( $reflected_stored_lesson_resources ) {
+		        foreach ($reflected_stored_lesson_resources as $lesson_resources) {
+		            foreach ($lesson_resources as $key => $value) {
+		            	if ( $value ) {
+			            	?>
+			            	<p>
+							    <label for="meta-lesson-resource" class="prfx-row-title"><?php _e( 'Resource Upload', 'reflected' )?></label>
+							    <input type="text" name="meta-lesson-resource[title][]" class="resource-title" value="Title" />
+							    <input type="text" name="meta-lesson-resource[media][]" class="meta-resource-input" value="<?php echo $value ?>" />
+							    <input type="button" class="meta-image-button button" value="<?php _e( 'Choose or Upload an Image', 'prfx-textdomain' )?>" />
+							    
+							</p> 
+							<?php
+						}
+		            }
+		        }
+		    } else {
+		    ?>
 			<p>
-			    <label for="meta-lesson-resource1" class="prfx-row-title"><?php _e( 'Resource Upload', 'reflected' )?></label>
-			    <input type="text" name="meta-lesson-resource1" class="meta-resource-input" id="meta-lesson-resource1" value="<?php if ( isset ( $prfx_stored_meta['meta-lesson-resource'] ) ) echo $prfx_stored_meta['meta-lesson-resource'][1]; ?>" />
-			    <input type="button" id="meta-image-button2" class="meta-image-button button" value="<?php _e( 'Choose or Upload an Image', 'prfx-textdomain' )?>" />
+			    <label for="meta-lesson-resource" class="prfx-row-title"><?php _e( 'Resource Upload', 'reflected' )?></label>
+			    <input type="text" name="meta-lesson-resource[][title]" class="resource-title" value="Title" />
+			    <input type="text" name="meta-lesson-resource[][media]" class="meta-resource-input" value="" />
+			    <input type="button" class="meta-image-button button" value="<?php _e( 'Choose or Upload an Image', 'prfx-textdomain' )?>" />
 			</p> 
+			<?php 
+			}
+			?>
 			<input type="button" id="meta-image-more" class="button" value="<?php _e( 'More', 'prfx-textdomain' )?>" />
 		</div>
 	<?php
 	}
 
+	/**
+	 * Saves the data from the metabox. Triggered by 'save_post'.
+	 *
+	 * @since 	1.0.0
+	 * @access 	public
+	 * @return 	void
+	 */
 	public function prfx_meta_save( $post_id ) {
  
 	    // Checks save status
@@ -115,6 +146,10 @@ class Reflected_Admin_Metaboxes
 		// Checks for input and saves if needed
 		if( isset( $_POST[ 'meta-lesson-plan' ] ) ) {
 		    update_post_meta( $post_id, 'meta-lesson-plan', $_POST[ 'meta-lesson-plan' ] );
+		}
+		// Checks for input and saves if needed
+		if( isset( $_POST[ 'meta-lesson-resource' ] ) ) {
+		    update_post_meta( $post_id, 'meta-lesson-resource', $_POST[ 'meta-lesson-resource' ] );
 		}
 	 
 	}
