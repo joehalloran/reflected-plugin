@@ -49,6 +49,7 @@ jQuery(document).ready(function($){
     $('#meta-image-more').click(function(e){
 
         $clone = $inputPar.clone();
+        $clone.children('.resource-title').val('');
         $clone.children('.meta-resource-input').val('');
         $('#additional-resources').children('p:last').after( $clone  );
 
