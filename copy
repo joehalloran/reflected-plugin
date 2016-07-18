@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cp -r /Users/joestandard/Documents/github/reflected-plugin/reflected/ /Users/joestandard/Sites/reflected_test/wp-content/plugins/
+cp -r -v /Users/joestandard/Documents/github/reflected-plugin/reflected/ /Users/joestandard/Sites/reflected_test/wp-content/plugins/
 
 
-cp -r /Users/joestandard/Documents/github/reflected-plugin/reflected_custom_theme/ /Users/joestandard/Sites/reflected_test/wp-content/themes/
+cp -r -v /Users/joestandard/Documents/github/reflected-plugin/reflected_custom_theme/ /Users/joestandard/Sites/reflected_test/wp-content/themes/

@@ -140,7 +140,7 @@ class Reflected_Admin_Metaboxes
 		if ( isset ( $reflected_stored_lesson_plan ) ) {
 			$html.= $reflected_stored_lesson_plan[0];
 		}
-		$html .= '" /><input type="button" id="meta-image-button" class="meta-image-button button" value="'. _e( 'Choose or Upload an Image', 'reflected' ).' /></p>'
+		$html .= '" /><input type="button" id="meta-image-button" class="meta-image-button button" value="'. _e( 'Choose or Upload an Image', 'reflected' ).' /></p>';
 		echo $html;
 	}
 
