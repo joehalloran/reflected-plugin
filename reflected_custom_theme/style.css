@@ -1,10 +1,10 @@
 /*
-Theme Name: ReflectED custom theme
-Theme URI: 
+Theme Name: reflected_custom_theme
+Theme URI: http://devdm.com/DevDmBootstrap3
 Author: Joe Halloran
-Author URI: 
-Description: ReflectED custom theme - A devdmbootstrap3 v1.80 child theme.
-Version: 1.8.2
+Author URI: http://devdm.com/
+Description: A devdmbootstrap3 v1.80 child theme.
+Version: 1.80
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, fluid-layout, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, rtl-language-support, theme-options, translation-ready
@@ -19,9 +19,183 @@ Template: devdmbootstrap3
 /****************** Special Blank CSS classes for child themes to use without disturbing core bootstrap rules ****************/
 
 body {
-	font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
-	color: #444;
-    font-size: 16px;
+  padding-top: 50px;
+  padding-bottom: 0px;
+  font-size: 16px;
+  font-family: 'Source Sans Pro', 'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
+.spacer10 {
+    height: 10px;
+}
+
+.spacer20 {
+    height: 20px;
+}
+
+.spacer40 {
+    height: 40px;
+}
+
+.navbar {
+    min-height: 80px;
+    padding-top: 15px
+}
+
+.navbar-inverse {
+    background-color: #252d44;
+    border-radius: 0;
+    border: none;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #fff;
+}
+
+.navbar-inverse .navbar-toggle {
+    border-color: #fff;
+}
+
+.navbar-inverse .navbar-toggle:active .icon-bar, 
+.navbar-inverse .navbar-toggle:focus .icon-bar, 
+.navbar-inverse .navbar-toggle:hover .icon-bar,
+.navbar-inverse .navbar-toggle:visited .icon-bar  {
+    background-color: #FD2700;
+}
+
+.navbar-inverse .navbar-toggle:hover,
+.navbar-inverse .navbar-toggle:active,
+.navbar-inverse .navbar-toggle:focus,
+.navbar-inverse .navbar-toggle:visited {
+    background-color: #252d44;
+    border-color: #FD2700;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #1F71BA;
+}
+
+.navbar-inverse .navbar-brand > span {
+    color: #FD2700;
+}
+
+.navbar-inverse .navbar-brand:hover, 
+.navbar-inverse .navbar-brand:focus {
+    color: #FD2700;
+}
+
+.navbar-inverse .navbar-brand:hover > span, 
+.navbar-inverse .navbar-brand:focus > span {
+    color: #1F71BA;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: #fff;
+}
+
+.navbar-inverse .navbar-nav>li>a:focus, .navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a.active {
+    color: #FD2700;
+}
+
+.main-page-header {
+    color: #1F71BA;
+    font-size: 70px;
+    margin-top: 80px;
+    border-bottom: 1px solid #1F71BA
+}
+
+.header {
+    background-color: #252d44;
+    margin-bottom: 50px;
+}
+
+
+@media (min-width: 768px) {
+    .header {
+        margin-bottom: 100px;
+    }
+}
+
+.header:before { 
+    content: '';
+    position: absolute;
+    left: -25%;
+    bottom: -25%;
+    width: 150%; 
+    height: 200px; 
+    background-color: #fff; 
+    -webkit-transform: rotate(-3deg);
+    -moz-transform: rotate(-3deg);
+    transform: rotate(-3deg);
+}
+
+.header .container {
+    padding: 70px 0 180px 0;
+}
+    
+#site-titles > h1 {
+    font-size: 90px;
+    margin-top: 35px;
+    color: #1F71BA;
+}
+
+#site-titles > h1 > span {
+    color: #FD2700;
+}
+
+#site-titles > h2 {
+    color: #fff;
+}
+
+#top-menu .col-sm-4:nth-child(1) .menu-box {
+    background-color: #5da655;
+}
+
+#top-menu .col-sm-4:nth-child(2) .menu-box {
+    background-color: #d7524d;
+}
+
+#top-menu .col-sm-4:nth-child(3) .menu-box {
+    background-color: #27a4e7;
+}
+
+#top-menu .col-sm-3:nth-child(4) .menu-box {
+    background-color: #B95FA5;
+}
+
+@media (min-width: 768px) {
+    .menu-box.top {
+        margin-top: -200px;
+    }
+}
+
+.menu-box {
+    padding-top: 20px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+.menu-box .glyphicon {
+    font-size: 50px;
+    background-color: #eee; /* fallback */
+    background-color: rgba(200,200,200,0.2);
+    margin: 35px 0;
+    border: 1px solid #000;
+    border-radius: 70px;
+    padding: 30px;
+
+}
+
+.menu-box h2 {
+    background-color: #eee; /* fallback */
+    background-color: rgba(200,200,200,0.5);
+    padding: 25px 0;
+}
+
+#front-page-video {
+    margin: 100px 0 60px 0;
+    background-color: #eee;
+    padding: 125px 0;
 }
 
 .dmbs-container {
@@ -29,7 +203,7 @@ body {
 }
 
 .dmbs-header {
-	margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 .dmbs-header-img {
@@ -40,130 +214,16 @@ body {
 
 }
 
-/* ##### Menu settings ##### */
-
 .dmbs-top-menu {
-	text-transform: uppercase;
-	font-size: 12px;
 
 }
 
-.dmbs-top-menu .navbar-inverse {
-	background-color: #F3F3F3;
-    border: 1px solid #ededed;
-    border-bottom: 5px solid #16A1E7;
-}
-
-.dmbs-top-menu .navbar-inverse .navbar-toggle {
-    border-color: #bbb;
-}
-
-.dmbs-top-menu .navbar-inverse .navbar-toggle:hover, .dmbs-top-menu .navbar-inverse .navbar-toggle:focus {
-    background-color: #16a1e7;
-    border-color: #16a1e7
-}
-
-.dmbs-top-menu .navbar-inverse .navbar-toggle .icon-bar {
-    background-color: #bbb;
-}
-
-.dmbs-top-menu .navbar-inverse .navbar-toggle:hover .icon-bar, .dmbs-top-menu .navbar-inverse .navbar-toggle:focus .icon-bar {
-	background-color: #fff;
-}
-
-.dmbs-top-menu .navbar-inverse .navbar-nav > li > a {
-	background-color: #F3F3F3;
-	color: #6a6a6a;
-}
-
-
-.dmbs-top-menu .navbar-inverse .navbar-nav > .active > a, 
-.dmbs-top-menu .navbar-inverse .navbar-nav > li > a:hover,
-.dmbs-top-menu .navbar-inverse .navbar-nav > li > a:focus  {
-	color: #fff;
-    background-color: #16A1E7;
-}
-
-.dmbs-top-menu .navbar-nav > li > .dropdown-menu {
-	background: #EFEFEF;
-	padding: 0;
-}
-
-.dmbs-top-menu .navbar-nav > li > .dropdown-menu a {
-    font-size: 11px;
-    line-height: 2.181818182;
-    padding: 8px 10px;
-    border-bottom: 1px solid #F9F9F9;
-}
-
-.dmbs-top-menu .navbar-nav > li > .dropdown-menu a:hover {
-    background: #e9e9e9;
-    color: #444;
-}
-
-/* ##### Content Area ##### */
 .dmbs-content {
-	margin-top: 20px;
 
-}
-
-.btn-info, .comment-respond #submit, #searchform #searchsubmit {
-    color: #fff;
-    background-color: #16a1e7;
-    border-color: #16a1e7;
-}
-
-a {
-    color: #16a1e7;
-    text-decoration: none;
-}
-
-h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
-	font-weight: normal;
-
-}
-
-.spacer-10 {
-    height: 10px;
-}
-.spacer-20 {
-    height: 20px;
-}
-.spacer-40 {
-    height: 40px;
 }
 
 .dmbs-main {
-	border-right: 1px solid #F1F1F1;
-}
 
-.dmbs-front-page .page-header, .dmbs-main .page-header {
-	margin-top: 0;
-	border: none;
-}
-
-.dmbs-front-page .panel-default {
-    border-color: #16a1e7;
-    text-align: center;
-}
-
-.dmbs-front-page .panel-default > .panel-heading {
-    color: #ffffff;
-    background-color: #16a1e7;
-    border-color: #16a1e7;
-}
-
-.dmbs-front-page .panel-default > .panel-heading > .panel-title {
-    font-size: 28px;
-}
-
-.dmbs-front-page .panel-default .panel-body {
-    padding-top: 40px;
-    padding-bottom: 40px
-}
-
-.dmbs-front-page .panel .glyphicon {
-    font-size: 50px;
 }
 
 .dmbs-left {
@@ -183,5 +243,11 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 .dmbs-footer {
+    background-color: #ddd;
+    margin-top: 100px;
+}
 
+.dmbs-footer .container {
+    padding: 40px 0;
+}
 }

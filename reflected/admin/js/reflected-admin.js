@@ -3,25 +3,23 @@
  */
 jQuery(document).ready(function($){
  
-    // Instantiates the variable that holds the media library frame.
-    var meta_image_frame;
-
-    var el;
- 
-    // Runs when the image button is clicked.
-    $('.meta-image-button').click(function(e){
+    // Add files / images to additional resources
+    $('#additional-resources').on('click', '.meta-image-button', function(e){
         
         // Prevents the default action from occuring.
         e.preventDefault();
 
         $el = $(this);
 
+        // Instantiates the variable that holds the media library frame.
+        var meta_image_frame;
+
         // If the frame already exists, re-open it.
         if ( meta_image_frame ) {
             meta_image_frame.open();
             return;
         }
- 
+        
         // Sets up the media library frame
         meta_image_frame = wp.media.frames.meta_image_frame = wp.media({
             title: "Select or Upload Media",
@@ -45,6 +43,17 @@ jQuery(document).ready(function($){
         meta_image_frame.open();
     });
 
+    // Delete additional resource items
+    $('#additional-resources').on('click', '.meta-delete-button', function(e){
+        
+        e.preventDefault();
+
+        $el = $(this);
+
+        $el.parent('p').remove();
+
+    });
+
     var $inputPar = $('#additional-resources').children('p').last();
     $('#meta-image-more').click(function(e){
 
@@ -52,6 +61,7 @@ jQuery(document).ready(function($){
         $clone.children('.resource-title').val('');
         $clone.children('.meta-resource-input').val('');
         $('#additional-resources').children('p:last').after( $clone  );
+        console.log("Adding More");
 
     });
 });

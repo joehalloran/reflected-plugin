@@ -80,67 +80,56 @@ class Reflected_Admin_Metaboxes
 	 */
 	public function metabox( $post ) {
 	    $reflected_stored_lesson_plan = get_post_meta( $post->ID , 'meta-lesson-plan');
-		$this->metabox_header($reflected_stored_lesson_plan);
-		?>    
-		<div id="additional-resources"> 
-			<h3>Additional Resources</h3>
-			<?php
-			$reflected_stored_lesson_resources = get_post_meta( $post->ID, 'meta-lesson-resource');
-			if ( $reflected_stored_lesson_resources ) {
-		        foreach ($reflected_stored_lesson_resources as $lesson_resources) {
-		            foreach ($lesson_resources['title'] as $key => $value) {
-						?>		               
-		                <p>
-						    <label for="meta-lesson-resource" class="prfx-row-title"><?php _e( 'Resource Upload', 'reflected' )?></label>
-						    <input type="text" name="meta-lesson-resource[title][]" class="resource-title" value="<?php echo $value ?>" />
-						    <input type="text" name="meta-lesson-resource[media][]" class="meta-resource-input" value="<?php echo $lesson_resources['media'][$key] ?>" />
-						    <input type="button" class="meta-image-button button" value="<?php _e( 'Choose or Upload an Image', 'reflected' )?>" />
-						    <input type="button" class="meta-delete-button button" value="<?php _e( 'X', 'reflected' )?>" />
-						    
-						</p> 
-						<?php
-		            }
-		        }
-		    } elseif ( FALSE ) {
-		        foreach ($reflected_stored_lesson_resources as $lesson_resources) {
-		            foreach ($lesson_resources as $key => $value) {
-		            	if ( $value ) {
-			            	?>
-			            	<p>
-							    <label for="meta-lesson-resource" class="prfx-row-title"><?php _e( 'Resource Upload', 'reflected' )?></label>
-							    <input type="text" name="meta-lesson-resource[title][]" class="resource-title" value="Title" />
-							    <input type="text" name="meta-lesson-resource[media][]" class="meta-resource-input" value="<?php echo $value ?>" />
-							    <input type="button" class="meta-image-button button" value="<?php _e( 'Choose or Upload an Image', 'reflected' )?>" />
-							    
-							</p> 
-							<?php
-						}
-		            }
-		        }
-		    } else {
-		    ?>
-			<p>
-			    <label for="meta-lesson-resource" class="prfx-row-title"><?php _e( 'Resource Upload', 'reflected' )?></label>
-			    <input type="text" name="meta-lesson-resource[][title]" class="resource-title" value="Title" />
-			    <input type="text" name="meta-lesson-resource[][media]" class="meta-resource-input" value="" />
-			    <input type="button" class="meta-image-button button" value="<?php _e( 'Choose or Upload an Image', 'reflected' )?>" />
-			</p> 
-			<?php 
-			}
-			?>
-			<input type="button" id="meta-image-more" class="button" value="<?php _e( 'More', 'reflected' )?>" />
-		</div>
-	<?php
+		$this->metabox_lesson_plans($reflected_stored_lesson_plan);
+		$reflected_stored_lesson_resources = get_post_meta( $post->ID, 'meta-lesson-resource');
+		$this->metabox_additional_resources($reflected_stored_lesson_resources);
+		  
 	}
 
-	protected function metabox_header($reflected_stored_lesson_plan) {
+	protected function metabox_additional_resources($reflected_stored_lesson_resources) {
+		?>
+		<div id="additional-resources"> 
+		<h3>Additional Resources</h3>
+		<?php
+		if ( $reflected_stored_lesson_resources ) {
+	        foreach ($reflected_stored_lesson_resources as $lesson_resources) {
+	            foreach ($lesson_resources['title'] as $key => $value) {
+					?>		               
+	                <p>
+					    <label for="meta-lesson-resource" class="prfx-row-title"><?php _e( 'Resource Upload', 'reflected' )?></label>
+					    <input type="text" name="meta-lesson-resource[title][]" class="resource-title" value="<?php echo $value ?>" />
+					    <input type="text" name="meta-lesson-resource[media][]" class="meta-resource-input" value="<?php echo $lesson_resources['media'][$key] ?>" />
+					    <input type="button" class="meta-image-button button" value="<?php _e( 'Choose or Upload an Image', 'reflected' )?>" />
+					    <input type="button" class="meta-delete-button button" value="<?php _e( 'X', 'reflected' )?>" />
+					    
+					</p> 
+					<?php
+	            }
+	        }
+	    } else {
+	    ?>
+		<p>
+		    <label for="meta-lesson-resource" class="prfx-row-title"><?php _e( 'Resource Upload', 'reflected' )?></label>
+		    <input type="text" name="meta-lesson-resource[title][]" class="resource-title" placeholder="Item Label" />
+		    <input type="text" name="meta-lesson-resource[media][]" class="meta-resource-input" value="" />
+		    <input type="button" class="meta-image-button button" value="<?php _e( 'Choose or Upload an Image', 'reflected' )?>" />
+		</p> 
+		<?php 
+		}
+		?>
+		<input type="button" id="meta-image-more" class="button" value="<?php _e( 'More', 'reflected' )?>" />
+		</div>
+		<?php
+	}
+
+	protected function metabox_lesson_plans($reflected_stored_lesson_plan) {
 		$html = '<h3>Lesson Plan</h3>';
-		$html .= '<p><label for="meta-lesson-plan" class="prfx-row-title">'. _e( 'Lesson Plan Upload', 'reflected' ).'</label>';
+		$html .= '<p><label for="meta-lesson-plan" class="prfx-row-title">'. __( 'Lesson Plan Upload', 'reflected' ).'</label>';
 		$html .= '<input type="text" name="meta-lesson-plan" class="meta-resource-input" id="meta-lesson-plan" value="';
 		if ( isset ( $reflected_stored_lesson_plan ) ) {
 			$html.= $reflected_stored_lesson_plan[0];
 		}
-		$html .= '" /><input type="button" id="meta-image-button" class="meta-image-button button" value="'. _e( 'Choose or Upload an Image', 'reflected' ).' /></p>';
+		$html .= '" /><input type="button" id="meta-image-button" class="meta-image-button button" value="'. __( 'Choose or Upload an Image', 'reflected' ).'" /></p>';
 		echo $html;
 	}
 

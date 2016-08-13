@@ -13,6 +13,7 @@ if ($dm_settings['show_postmeta'] != 0) {
     $reflected_stored_lesson_resources = get_post_meta( $post->ID, 'meta-lesson-resource');
     if ( $reflected_stored_lesson_resources ) {
     	echo '<h3>Lesson Resources</h3>';
+        foreach ($reflected_stored_lesson_resources as $lesson_resources) {
             foreach ($lesson_resources['title'] as $key => $value) {
                 echo '<p><a href="'.$lesson_resources['media'][$key].'"><span class="glyphicon glyphicon-download" aria-hidden="true"></span>'.$value.'</a></p>';
             }
