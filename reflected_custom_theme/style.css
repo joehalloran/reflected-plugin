@@ -93,13 +93,45 @@ body {
     color: #fff;
 }
 
-.navbar-inverse .navbar-nav>li>a:focus, .navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a.active {
+
+
+.navbar-inverse .navbar-nav>li>a:focus, .
+navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a.active {
     color: #FD2700;
+}
+
+.navbar-inverse .navbar-nav > .active > a, 
+.navbar-inverse .navbar-nav > .active > a:hover, 
+.navbar-inverse .navbar-nav > .active > a:focus {
+    color: #fff;
+    background-color: #1F71BA;
+}
+
+.navbar-inverse .navbar-nav > .open > a,
+.navbar-inverse .navbar-nav > .open > a:hover,
+.navbar-inverse .navbar-nav > .open > a:focus {
+    color: #fff;
+    background-color: #1F71BA;
+}
+
+.open > .dropdown-menu {
+	color: #fff;
+	background-color: #252d44;
+	font-size: 16px;
+}
+.dropdown-menu > li > a {
+    color: #fff;
+}
+
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+    color: #FD2700;
+    background-color: #252d44;
 }
 
 .main-page-header {
     color: #1F71BA;
-    font-size: 70px;
+    font-size: 55px;
+    padding-bottom: 10px;
     margin-top: 80px;
     border-bottom: 1px solid #1F71BA
 }
@@ -208,6 +240,12 @@ body {
 
 .dmbs-header-img {
 
+}
+
+/* Logo sizing on organisations page */
+
+.org-logo {
+	max-width: 150px;
 }
 
 .dmbs-header-text {
