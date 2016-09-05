@@ -4,7 +4,7 @@
 jQuery(document).ready(function($){
  
     // Add files / images to additional resources
-    $('#additional-resources').on('click', '.meta-image-button', function(e){
+    $('#reflected-resources').on('click', '.meta-image-button', function(e){
         
         // Prevents the default action from occuring.
         e.preventDefault();
@@ -50,7 +50,13 @@ jQuery(document).ready(function($){
 
         $el = $(this);
 
-        $el.parent('p').remove();
+        //console.log($el.parent('p').siblings('p'));
+        
+        if ( $el.parent('p').siblings('p').length > 0) {
+
+            $el.parent('p').remove();
+
+        }
 
     });
 
@@ -61,7 +67,7 @@ jQuery(document).ready(function($){
         $clone.children('.resource-title').val('');
         $clone.children('.meta-resource-input').val('');
         $('#additional-resources').children('p:last').after( $clone  );
-        console.log("Adding More");
+        //console.log("Adding More");
 
     });
 });

@@ -54,9 +54,9 @@
                         // single post
                         if ( is_single() ) : ?>
 
-                            <div <?php post_class(); ?>>
+                            <div <?php post_class(); ?> >
 
-                                <h2 class="page-header"><?php the_title() ;?></h2>
+                                <?php //<h2 class="page-header"><?php the_title() ;</h2> ?>
 
                                 <?php if ( has_post_thumbnail() ) : ?>
                                     <?php the_post_thumbnail(); ?>

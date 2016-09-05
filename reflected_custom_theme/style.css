@@ -23,6 +23,8 @@ body {
   padding-bottom: 0px;
   font-size: 16px;
   font-family: 'Source Sans Pro', 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  background-color: #ffffff;
+  background-image: url("img/graphcoders-lil-fiber.png");
 }
 
 .spacer10 {
@@ -43,7 +45,8 @@ body {
 }
 
 .navbar-inverse {
-    background-color: #252d44;
+    background-color: #333d58;
+    background-image: url("img/diagmonds.png"); 
     border-radius: 0;
     border: none;
 }
@@ -136,69 +139,118 @@ navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a.active {
     border-bottom: 1px solid #1F71BA
 }
 
+.site-wrapper-inner {
+    overflow: hidden;
+}
+
 .header {
-    background-color: #252d44;
-    margin-bottom: 50px;
+    background-color: #333d58; /* #414f78; #252d44;*/
+    background-image: url("img/diagmonds.png");  /*url("img/nami.png");*/
+    background-position: 0 90px;
+    position: relative;
+    overflow: hidden;
+}
+
+.header svg {
+    position: absolute;
+    margin-top: -200px;
+    bottom: 0; 
+    width: 100%;
+}
+
+.header .corner {
+    fill: #fff;
 }
 
 
-@media (min-width: 768px) {
-    .header {
-        margin-bottom: 100px;
-    }
-}
-
-.header:before { 
+/*.header:before { 
     content: '';
     position: absolute;
     left: -25%;
-    bottom: -25%;
+    bottom: -35%;
     width: 150%; 
     height: 200px; 
     background-color: #fff; 
+    background-image: url("img/graphcoders-lil-fiber.png");
     -webkit-transform: rotate(-3deg);
     -moz-transform: rotate(-3deg);
     transform: rotate(-3deg);
-}
+}*/
 
 .header .container {
     padding: 70px 0 180px 0;
 }
     
 #site-titles > h1 {
-    font-size: 90px;
+    font-size: 60px;
     margin-top: 35px;
     color: #1F71BA;
+}
+
+@media (min-width: 450px) {
+    #site-titles > h1 {
+        font-size: 90px;
+    }
 }
 
 #site-titles > h1 > span {
     color: #FD2700;
 }
 
-#site-titles > h2 {
+#site-titles h2 {
     color: #fff;
 }
 
+#site-titles a:hover, a:focus {
+    color: #fff;
+}
+
+#top-menu {
+    background-color: #fff;
+}
+
+@media (min-width: 768px) {
+    #top-menu {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+}
+
+
 #top-menu .col-sm-4:nth-child(1) .menu-box {
     background-color: #5da655;
+    background-image: url("img/swirl.png");
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 
 #top-menu .col-sm-4:nth-child(2) .menu-box {
     background-color: #d7524d;
+    background-image: url("img/swirl.png");
 }
 
 #top-menu .col-sm-4:nth-child(3) .menu-box {
     background-color: #27a4e7;
+    background-image: url("img/swirl.png");
 }
 
 #top-menu .col-sm-3:nth-child(4) .menu-box {
     background-color: #B95FA5;
+    background-image: url("img/swirl.png");
 }
 
 @media (min-width: 768px) {
     .menu-box.top {
         margin-top: -200px;
     }
+}
+
+#top-menu .menu-box-link {
+    color: #333;
+}
+
+#top-menu .menu-box-link:hover,
+#top-menu .menu-box-link:focus {
+    color: #23527c;
 }
 
 .menu-box {
@@ -220,13 +272,22 @@ navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a.active {
 
 .menu-box h2 {
     background-color: #eee; /* fallback */
-    background-color: rgba(200,200,200,0.5);
+    background-color: rgba(200,200,200,0.2);
     padding: 25px 0;
 }
 
+.menu-box-link:hover .menu-box .glyphicon, 
+.menu-box-link:hover .menu-box h2 {
+    background-color: #aaa; /* fallback */
+    background-color: rgba(50,50,50,0.2);
+}
+
+
+
 #front-page-video {
-    margin: 100px 0 60px 0;
+    margin: 0 0 60px 0;
     background-color: #eee;
+    background-image: url("img/graphcoders-lil-fiber.png");
     padding: 125px 0;
 }
 
@@ -246,6 +307,28 @@ navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a.active {
 
 .org-logo {
 	max-width: 150px;
+}
+
+/* Contact Page */
+.contact-submit > input[type="submit"] {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .dmbs-header-text {

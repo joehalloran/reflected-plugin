@@ -13,3 +13,14 @@ function reflected_custom_scripts()
 	wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' );
 }
 add_action( 'wp_enqueue_scripts', 'reflected_custom_scripts' );
+
+////////////////////////////////////////////////////////////////////
+// Register Menus
+////////////////////////////////////////////////////////////////////
+
+register_nav_menus(
+            array(
+                'footer_menu_two' => 'Footer Menu Two',
+                'footer_menu_three' => 'Footer Menu Three',
+            )
+        );
