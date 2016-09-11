@@ -22,9 +22,21 @@ body {
   padding-top: 50px;
   padding-bottom: 0px;
   font-size: 16px;
-  font-family: 'Source Sans Pro', 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  font-family: 'Open Sans', 'Helvetica Neue',Helvetica,Arial,sans-serif;
   background-color: #ffffff;
   background-image: url("img/graphcoders-lil-fiber.png");
+}
+
+.navbar-inverse .navbar-brand,
+#site-titles > h1 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Raleway', sans-serif;   
+    font-weight: 700;
 }
 
 .spacer10 {
@@ -41,7 +53,9 @@ body {
 
 .navbar {
     min-height: 80px;
-    padding-top: 15px
+    padding-top: 15px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
 }
 
 .navbar-inverse {
@@ -75,21 +89,21 @@ body {
 }
 
 .navbar-inverse .navbar-brand {
-    color: #1F71BA;
+    color: #3594e8;
 }
 
 .navbar-inverse .navbar-brand > span {
-    color: #FD2700;
+    color: #e65237;
 }
 
 .navbar-inverse .navbar-brand:hover, 
 .navbar-inverse .navbar-brand:focus {
-    color: #FD2700;
+    color: #e65237;
 }
 
 .navbar-inverse .navbar-brand:hover > span, 
 .navbar-inverse .navbar-brand:focus > span {
-    color: #1F71BA;
+    color: #3594e8;
 }
 
 .navbar-inverse .navbar-nav>li>a {
@@ -124,11 +138,19 @@ navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a.active {
 }
 .dropdown-menu > li > a {
     color: #fff;
+    padding: 6px 20px;
+
 }
 
 .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
     color: #FD2700;
     background-color: #252d44;
+}
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+    color: #337AB7;
+    background-color: #FAFAFA;
+    background-color: transparent;
 }
 
 .main-page-header {
@@ -163,20 +185,6 @@ navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a.active {
 }
 
 
-/*.header:before { 
-    content: '';
-    position: absolute;
-    left: -25%;
-    bottom: -35%;
-    width: 150%; 
-    height: 200px; 
-    background-color: #fff; 
-    background-image: url("img/graphcoders-lil-fiber.png");
-    -webkit-transform: rotate(-3deg);
-    -moz-transform: rotate(-3deg);
-    transform: rotate(-3deg);
-}*/
-
 .header .container {
     padding: 70px 0 180px 0;
 }
@@ -184,25 +192,30 @@ navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a.active {
 #site-titles > h1 {
     font-size: 60px;
     margin-top: 35px;
-    color: #1F71BA;
+    color: #3594e8; /*#1F71BA;*/
 }
 
 @media (min-width: 450px) {
     #site-titles > h1 {
-        font-size: 90px;
+        font-size: 110px;
     }
 }
 
 #site-titles > h1 > span {
-    color: #FD2700;
+    color: #e65237; /*#FD2700;*/
 }
 
 #site-titles h2 {
     color: #fff;
 }
 
-#site-titles a:hover, a:focus {
+#site-titles a:hover,
+#site-titles a:focus {
     color: #fff;
+}
+
+#site-titles #rosendale-logo {
+	margin-top: 20px;
 }
 
 #top-menu {
@@ -291,6 +304,17 @@ navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a.active {
     padding: 125px 0;
 }
 
+.reflected-post-meta {
+    margin: 20px 0;
+}
+
+@media (min-width: 768px) {
+    .reflected-post-meta {
+        padding-left: 50%;
+    }
+    
+}
+
 .dmbs-container {
 
 }
@@ -330,6 +354,16 @@ navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a.active {
     -ms-user-select: none;
     user-select: none;
 }
+
+ul.film-list {
+	padding-left: 0;
+    list-style-type: none;
+}
+
+ul.film-list > li {
+	margin-bottom: 40px;
+}
+
 
 .dmbs-header-text {
 

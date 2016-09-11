@@ -10,15 +10,15 @@
           <h2>Metacognition for primary schools</h2>
           <a href="http://rosendale.cc" target="_blank">
             <h2>by Rosendale Primary School</h2>
-            <img src="<?php bloginfo('stylesheet_directory'); ?>/img/rosendale-logo-white.png" />
+            <img id="rosendale-logo" src="<?php bloginfo('stylesheet_directory'); ?>/img/rosendale-logo-white.png" />
           </a>
         </div> <!-- /.col -->
       </div> <!-- /.row -->
     </div> <!-- /.container -->
-    <!-- <svg height="200" width="1920"><polygon class="corner" points="0,200 1920,200 1920,0"></polygon></svg> -->
+    <svg height="200" width="1920"><polygon class="corner" points="0,200 1920,200 1920,0"></polygon></svg>
   </div> <!-- .container-fluid -->
   
-  <?php /*    
+   
   <div id="top-menu" class="container-fluid">
     <div class="container">
         <div class="row">
@@ -49,8 +49,7 @@
         </div> <!-- /.row -->
       </div> <!-- /.container -->
     </div>
-    */ 
-    ?>
+
       <div id="front-page-video" class="container-fluid">
         <div class="row">
           <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 text-center">

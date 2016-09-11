@@ -101,9 +101,9 @@ class Reflected_Admin_Metaboxes
 		?>
 		<div id="additional-resources"> 
 		<h3>Additional Resources</h3>
-		<p class="help-text"><span id="link-text-help">Link text</span><span id="link-help">Download Link </span></p>
+		<span class="help-text"><span id="link-text-help">Link text</span><span id="link-help">Download Link </span></span>
 		<?php
-		if ( $reflected_stored_lesson_resources ) {
+		if ( !($reflected_stored_lesson_resources[0] == NULL) ) {
 	        foreach ($reflected_stored_lesson_resources as $lesson_resources) {
 	            foreach ($lesson_resources['title'] as $key => $value) {
 					?>		               
@@ -152,14 +152,38 @@ class Reflected_Admin_Metaboxes
 	    if ( $is_autosave || $is_revision || !$is_valid_nonce ) {
 	        return;
 	    }
-		 
-		// Checks for input and saves if needed
+
+		// Meta lesson plan
 		if( isset( $_POST[ 'meta-lesson-plan' ] ) ) {
-		    update_post_meta( $post_id, 'meta-lesson-plan', $_POST[ 'meta-lesson-plan' ] );
+
+			$materials = sanitize_text_field($_POST[ 'meta-lesson-plan' ]);		     		
+		 
+			update_post_meta( $post_id, 'meta-lesson-plan',  $materials);
 		}
-		// Checks for input and saves if needed
+
+		// Meta lesson Resource
 		if( isset( $_POST[ 'meta-lesson-resource' ] ) ) {
-		    update_post_meta( $post_id, 'meta-lesson-resource', $_POST[ 'meta-lesson-resource' ] );
+			$materials = $_POST[ 'meta-lesson-resource' ];
+			$allItemsNull  = TRUE; // Assume the input is empty;
+			
+			// Loop through the array structure
+			
+       		foreach ($materials['title'] as $key => $value) {
+       			if ( !(FALSE == $value && FALSE == $materialItem['media'][$key]) ){
+					$allItemsNull = FALSE; //set value to false if item found
+				} 
+				// sanitize
+       			$materials['title'][$key] = sanitize_text_field($value);
+       			$materials['media'][$key] = esc_url_raw( $materials['media'][$key] );
+				
+			}
+			 
+
+			if ( $allItemsNull ) {
+			    update_post_meta( $post_id, 'meta-lesson-resource',  NULL);
+			} else {
+				update_post_meta( $post_id, 'meta-lesson-resource',  $materials);
+			}
 		}
 	 
 	}

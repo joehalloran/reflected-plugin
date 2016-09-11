@@ -8,7 +8,7 @@
         }
     }
     $reflected_stored_lesson_resources = get_post_meta( $post->ID, 'meta-lesson-resource');
-    if ( $reflected_stored_lesson_resources ) {
+    if ( !($reflected_stored_lesson_resources[0] == NULL) ) {
     	echo '<h2>Lesson Resources</h2>';
         if ( $reflected_stored_lesson_resources ) {
             foreach ($reflected_stored_lesson_resources as $lesson_resources) {

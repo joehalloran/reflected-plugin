@@ -72,10 +72,10 @@ class Reflected {
 		$this->version = '1.0.0';
 
 		$this->load_dependencies();
-		$this->set_locale();
+		// $this->set_locale();  // Removed as redundant
 		$this->define_admin_hooks();
 		$this->define_metabox_hooks();
-		$this->define_public_hooks();
+		// $this->define_public_hooks(); // Removed as redundant
 
 	}
 
@@ -107,7 +107,9 @@ class Reflected {
 		 * The class responsible for defining internationalization functionality
 		 * of the plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-reflected-i18n.php';
+
+		// Removed as redundant
+		//require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-reflected-i18n.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the admin area.
@@ -123,7 +125,9 @@ class Reflected {
 		 * The class responsible for defining all actions that occur in the public-facing
 		 * side of the site.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-reflected-public.php';
+
+		// Removed as redundant		
+		//require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-reflected-public.php';
 
 		$this->loader = new Reflected_Loader();
 
