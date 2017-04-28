@@ -14,7 +14,6 @@ Template: devdmbootstrap3
 
 @import "css/bootstrap.css";
 
-/* YOU SHOULD BE MAKING A CHILD THEME. Don't let me be a bad guy and erase all your hard work with a theme update. I just want to bring you new amazing features. I don't want to destroy your world. I've include a child theme to use. Need help? http://devdm.com/DevDmBootstrap3/child-themes/ */
 
 /****************** Special Blank CSS classes for child themes to use without disturbing core bootstrap rules ****************/
 
@@ -22,6 +21,7 @@ body {
   padding-top: 50px;
   padding-bottom: 0px;
   font-size: 16px;
+  line-height: 1.625;
   font-family: 'Open Sans', 'Helvetica Neue',Helvetica,Arial,sans-serif;
   background-color: #ffffff;
   background-image: url("img/graphcoders-lil-fiber.png");
@@ -229,26 +229,21 @@ navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a.active {
     }
 }
 
+#top-menu .menu-box {
+    background-image: url("img/swirl.png");
+}
 
 #top-menu .col-sm-4:nth-child(1) .menu-box {
     background-color: #5da655;
-    background-image: url("img/swirl.png");
 /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 
 #top-menu .col-sm-4:nth-child(2) .menu-box {
     background-color: #d7524d;
-    background-image: url("img/swirl.png");
 }
 
 #top-menu .col-sm-4:nth-child(3) .menu-box {
     background-color: #27a4e7;
-    background-image: url("img/swirl.png");
-}
-
-#top-menu .col-sm-3:nth-child(4) .menu-box {
-    background-color: #B95FA5;
-    background-image: url("img/swirl.png");
 }
 
 @media (min-width: 768px) {
@@ -259,11 +254,14 @@ navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a.active {
 
 #top-menu .menu-box-link {
     color: #333;
+    border-color: #000;
 }
 
 #top-menu .menu-box-link:hover,
 #top-menu .menu-box-link:focus {
-    color: #23527c;
+    /*color: #23527c;*/
+    color: #f1f1f1;
+    border-color: #f1f1f1;
 }
 
 .menu-box {
@@ -273,11 +271,12 @@ navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a.active {
 }
 
 .menu-box .glyphicon {
-    font-size: 50px;
+    font-size: 40px;
     background-color: #eee; /* fallback */
     background-color: rgba(200,200,200,0.2);
     margin: 35px 0;
-    border: 1px solid #000;
+    border: 1px solid;
+    border-color: inherit;
     border-radius: 70px;
     padding: 30px;
 

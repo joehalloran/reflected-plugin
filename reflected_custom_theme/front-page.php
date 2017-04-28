@@ -23,26 +23,26 @@
     <div class="container">
         <div class="row">
           <div class="col-sm-4">
-            <a class="menu-box-link" href="http://google.com" target="_blank">
+            <a class="menu-box-link" href="/teacher-area/conferences-and-training/">
               <div class="top menu-box">
-                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                <h2>Training</h2>
+                <span class="glyphicon glyphicon-blackboard" aria-hidden="true"></span>
+                <h2>Staff Training</h2>
               </div> <!-- .menu-box -->
             </a>
           </div> <!-- /.col -->
           <div class="col-sm-4">
-            <a class="menu-box-link" href="http://google.com" target="_blank">
+            <a class="menu-box-link" href="/lessons/">
               <div class="top menu-box">
                 <span class="glyphicon glyphicon-education" aria-hidden="true"></span>
-                <h2>Teacher Area</h2>
+                <h2>Lesson Plans</h2>
               </div> <!-- .menu-box -->
             </a>
           </div> <!-- /.col -->
           <div class="col-sm-4">
-            <a class="menu-box-link" href="http://google.com" target="_blank">
+            <a class="menu-box-link" href="/research/">
               <div class="top menu-box">
                 <span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span>
-                <h2>Conferences</h2>
+                <h2>Research</h2>
               </div> <!-- .menu-box -->
             </a>
           </div> <!-- /.col -->
